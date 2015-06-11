@@ -1,0 +1,7 @@
+smokeping:
+    command: -T Asia/Taipei
+    volumes:
+        - ./smokeping:/etc/smokeping:ro
+    ports:
+        - "8000:80"
+    image: dperson/smokeping
