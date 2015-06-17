@@ -1,0 +1,10 @@
+icinga2:
+    command: -e ICINGA_PASSWORD="xxx" -e ICINGA_WEB_PASSWORD="xxx" -e ICINGAWEB2_PASSWORD="xxx"
+    ports:
+        - "8001:80"
+        - "5665:5665"
+    volumes:
+        - ./icinga2:/etc/icinga2:ro
+        - ./icingaweb2:/etc/icingaweb2:ro
+        - ./icing-web:/etc/icinga-web:ro
+    image: jordan/icinga2:latest

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations xmlns="http://agavi.org/agavi/config/parts/module/1.0" xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+    <ae:configuration>
+
+        <!--
+            Overwrite or append your reporting cronk configuration
+            here
+        -->
+
+        <module enabled="true">
+        <!-- 
+            Look into app/modules/Cronks/config/module.xml for
+            possible settings
+        -->
+        <!--
+            <setting name="search.numberMinimumLetters">2</setting>
+            <setting name="search.maximumResults">200</setting>
+        -->
+        </module>
+    
+    </ae:configuration>
+</ae:configurations>
+
