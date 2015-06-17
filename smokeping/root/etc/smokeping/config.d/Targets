@@ -1,0 +1,49 @@
+*** Targets ***
+
+probe = FPing
+
+menu = Top
+title = Night9 Network Latency Grapher
+remark = Welcome to the SmokePing website of Night9.cc. \
+         Hot!Hot!Hot!
+
+
++ Night9
+menu = Night9
+title = Night9
+
+++ NextHop
+menu = NextHop
+title = NextHop
+host = 140.113.215.254
+
+++ n7k
+menu = n7k
+title = n7k
+host = 140.113.0.174
+
+++ 0_54
+menu = 0_54
+title = 0_54
+host = 140.113.0.54
+
+++ 0_78
+menu = 0_78
+title = 0_78
+host = 140.113.0.78
+
+++ 0_161
+menu = 0_161
+title = 0_161
+host = 140.113.0.161
+
+++ Google
+menu = Google
+title = Google
+host = www.google.com.tw
+
+++ VPN
+menu = VPN
+title = VPN
+host = vpn.night9.cc
+

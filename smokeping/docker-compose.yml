@@ -1,7 +1,9 @@
 smokeping:
     command: -T Asia/Taipei
     volumes:
-        - ./smokeping:/etc/smokeping:ro
+        - ./root/etc/smokeping:/etc/smokeping:ro
+        - ./root/var/lib/smokeping:/var/lib/smokeping:rw
+        - ./root/var/cache/smokeping:/var/cache/smokeping:rw
     ports:
         - "8000:80"
     image: dperson/smokeping
