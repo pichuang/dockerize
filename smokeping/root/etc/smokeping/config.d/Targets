@@ -15,17 +15,22 @@ title = Night9
 ++ NextHop
 menu = NextHop
 title = NextHop
-host = 140.113.215.254
+host = 140.113.194.225
 
-++ n7k
-menu = n7k
-title = n7k
-host = 140.113.0.174
+++ 23_21
+menu = 23_21
+title = 23_21
+host = 140.113.23.21
 
-++ 0_54
-menu = 0_54
-title = 0_54
-host = 140.113.0.54
+++ 3_178
+menu = 3_178
+title = 3_178
+host = 140.113.3.178
+
+++ 3_134
+menu = 3_134
+title = 3_134
+host = 140.113.3.134
 
 ++ 0_78
 menu = 0_78
