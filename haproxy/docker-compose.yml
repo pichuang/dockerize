@@ -1,6 +1,4 @@
 :
     command:
-    restart: always
-    enviroment:
     ports:
     image:

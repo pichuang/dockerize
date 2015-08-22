@@ -1,0 +1,79 @@
+# gitlab.service #######################################################################
+[Unit]
+Description=Gitlab
+After=docker.service redis:redisio.service postgresql:postgresql.service 
+Requires=docker.service redis:redisio.service postgresql:postgresql.service 
+
+[Service]
+ExecStartPre=-/usr/bin/docker kill gitlab
+ExecStartPre=-/usr/bin/docker rm gitlab
+ExecStartPre=/usr/bin/docker pull sameersbn/gitlab:7.12.2-2
+ExecStart=/usr/bin/docker run \
+    --name gitlab \
+    -p 443:443 \
+    -p 80:80 \
+    -p 10022:22 \
+    -v /srv/docker/gitlab/gitlab:/home/git/data \
+    -e "GITLAB_BACKUP_TIME=02:00" \
+    -e "GITLAB_BACKUPS=daily" \
+    -e "GITLAB_EMAIL=wwwta-only@cs.nctu.edu.tw" \
+    -e "GITLAB_EMAIL_REPLY_TO=noreply@cs.nctu.edu.tw" \
+    -e "GITLAB_HOST=corevcs.cs.nctu.edu.tw" \
+    -e "GITLAB_HTTPS=true" \
+    -e "GITLAB_PORT=443" \
+    -e "GITLAB_SSH_PORT=10022" \
+    -e "GITLAB_TIMEZONE=Taipei" \
+    -e "LDAP_BASE=dc=cs,dc=nctu,dc=edu,dc=tw" \
+    -e "LDAP_BIND_DN=dc=cs,dc=nctu,dc=edu,dc=tw" \
+    -e "LDAP_ENABLED=true" \
+    -e "LDAP_HOST=ldapmaster.cs.nctu.edu.tw" \
+    -e "LDAP_METHOD=tls" \
+    -e "LDAP_PORT=389" \
+    -e "LDAP_UID=uid" \
+    -e "SMTP_AUTHENTICATION=login" \
+    -e "SMTP_DOMAIN=cs.nctu.edu.tw" \
+    -e "SMTP_ENABLED=true" \
+    -e "SMTP_HOST=csmailer.cs.nctu.edu.tw" \
+    -e "SMTP_PASS=password" \
+    -e "SMTP_PORT=587" \
+    -e "SMTP_STARTTLS=false" \
+    -e "SMTP_USER=gitlab@corevcs.cs.nctu.edu.tw" \
+    -e "SSL_SELF_SIGNED=true" \
+    -e "TZ=Asia/Taipei" \
+    --link redis:redisio \
+    --link postgresql:postgresql \
+    sameersbn/gitlab:7.12.2-2 
+ExecStop=/usr/bin/docker stop gitlab
+# redis.service #######################################################################
+[Unit]
+Description=Redis
+After=docker.service 
+Requires=docker.service 
+
+[Service]
+ExecStartPre=-/usr/bin/docker kill redis
+ExecStartPre=-/usr/bin/docker rm redis
+ExecStartPre=/usr/bin/docker pull sameersbn/redis:latest
+ExecStart=/usr/bin/docker run \
+    --name redis \
+    -v /srv/docker/gitlab/redis:/var/lib/redis \
+    sameersbn/redis:latest 
+ExecStop=/usr/bin/docker stop redis
+# postgresql.service #######################################################################
+[Unit]
+Description=Postgresql
+After=docker.service 
+Requires=docker.service 
+
+[Service]
+ExecStartPre=-/usr/bin/docker kill postgresql
+ExecStartPre=-/usr/bin/docker rm postgresql
+ExecStartPre=/usr/bin/docker pull sameersbn/postgresql:9.4-2
+ExecStart=/usr/bin/docker run \
+    --name postgresql \
+    -v /srv/docker/gitlab/postgresql:/var/lib/postgresql \
+    -e "DB_NAME=gitlabhq_production" \
+    -e "DB_PASS=password" \
+    -e "DB_USER=gitlab" \
+    sameersbn/postgresql:9.4-2 
+ExecStop=/usr/bin/docker stop postgresql

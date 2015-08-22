@@ -1,0 +1,16 @@
+[Unit]
+Description=Smokeping
+After=docker.service 
+Requires=docker.service 
+
+[Service]
+ExecStartPre=-/usr/bin/docker kill smokeping
+ExecStartPre=-/usr/bin/docker rm smokeping
+ExecStartPre=/usr/bin/docker pull dperson/smokeping
+ExecStart=/usr/bin/docker run \
+    --name smokeping \
+    -p 8000:80 \
+    -v /home/roan/docker/smokeping/root/etc/smokeping:/etc/smokeping:ro \
+    dperson/smokeping \
+    -T Asia/Taipei
+ExecStop=/usr/bin/docker stop smokeping
