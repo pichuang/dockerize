@@ -1,0 +1,7 @@
+#!/bin/bash
+docker pull sameersbn/bind:latest
+wget https://gist.github.com/sameersbn/ea4692d9a8ee7accd6b3#file-docker-compose-bind-yml
+
+echo "Ref"
+echo "http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/"
+

@@ -1,0 +1,11 @@
+econ-dns:
+  image: sameersbn/bind:latest
+  dns: 127.0.0.1
+  environment:
+    - ROOT_PASSWORD=econ-dns
+  ports:
+   - 192.168.100.1:10000:10000
+   - 192.168.100.1:53:53/udp
+  volumes:
+    - /srv/docker/dns:/data
+  restart: always

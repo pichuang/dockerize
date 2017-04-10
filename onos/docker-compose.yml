@@ -1,9 +1,0 @@
-onos:
-    command:
-    name: onos
-    ports:
-        - 8181:8181
-        - 6633:6633
-        - 8101:8101
-        - 9876:9876
-    image: rascov/onos
