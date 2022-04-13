@@ -1,14 +1,14 @@
-version: '3.9'
+version: "3"
 services:
   mongo:
-    image: library/mongo:5.0.7
+    image: docker.io/library/mongo:5.0.7
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
 
   mongo-express:
-    image: mongo-express
+    image: docker.io/library/mongo-express:latest
     restart: always
     ports:
       - 8081:8081
