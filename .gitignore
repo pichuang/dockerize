@@ -1,1 +1,5 @@
-icinga2/*
+mariadb/root/*
+mysql/root/*
+redis/root/*
+mongodb/root/*
+
