@@ -2,4 +2,5 @@ mariadb/root/*
 mysql/root/*
 redis/root/*
 mongodb/root/*
+kafka/root/*
 

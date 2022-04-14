@@ -1,15 +1,15 @@
 version: "3"
 services:
   redis:
-    # Ref: https://hub.docker.com/_/redis
-    image: docker.io/library/redis:5.0.6
+    # Ref: https://hub.docker.com/r/bitnami/redis/
+    image: docker.io/bitnami/redis:5.0.6
     restart: always
-    command: redis-server
     ports:
      - 6379:6379
     volumes:
-     - "./root:/data"
+     - "./root:/bitnami/redis/data"
     environment:
      - REDIS_REPLICATION_MODE=master
      # ALLOW_EMPTY_PASSWORD is recommended only for development.
      - ALLOW_EMPTY_PASSWORD=yes
+     #- REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL

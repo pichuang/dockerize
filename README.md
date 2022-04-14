@@ -6,13 +6,21 @@
 3. Install git
 
 ## Rush Services
-- [] dns
-- [] hackmd
-- [] smokeping
-- [] alpine=svn
-- [x] mysql - `20220413`
-- [x] mongodb - `20220413`
-- [x] redis - `20220413`
+- [ ] smokeping
+- [x] mariadb
+  - [x] library - `20220413`
+  - [x] bitnami - `20220414`
+- [x] mysql
+  - [x] library - `20220413`
+  - [ ] bitnami
+- [x] mongodb
+  - [x] library - `20220413`
+  - [x] bitnami - `20220414`
+- [x] redis
+  - [x] library - `20220413`
+  - [x] bitnami
+- [x] kafka
+  - [x] bitnami - `20220414`
 
 ## Setup
 

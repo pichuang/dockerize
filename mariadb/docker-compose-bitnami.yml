@@ -1,0 +1,21 @@
+version: "3"
+services:
+  db:
+    # Ref: https://hub.docker.com/r/bitnami/mariadb
+    image: docker.io/bitnami/mariadb:10.4.21
+    restart: always
+    environment:
+      # MARIADB_USER: test
+      # MARIADB_PASSWORD: test
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: testdb
+      # ALLOW_EMPTY_PASSWORD: yes
+    healthcheck:
+      test: ['CMD', '/opt/bitnami/scripts/mariadb/healthcheck.sh']
+      interval: 15s
+      timeout: 5s
+      retries: 6
+    volumes:
+      - "./root:/bitnami/mariadb"
+    ports:
+      - 3306:3306
