@@ -23,6 +23,8 @@
   - [x] bitnami - `20220414`
 - [x] kafka
   - [x] bitnami - `20220414`
+- [x] minio
+  - [x] bitnami - `20220414`
 
 ## Setup
 
