@@ -4,6 +4,7 @@
 1. Install docker
 2. Install [docker-compose](https://docs.docker.com/compose/install/)
 3. Install git
+4. Ubuntu 20.04
 
 ## Rush Services
 - [x] smokeping
@@ -19,7 +20,7 @@
   - [x] bitnami - `20220414`
 - [x] redis
   - [x] library - `20220413`
-  - [x] bitnami
+  - [x] bitnami - `20220414`
 - [x] kafka
   - [x] bitnami - `20220414`
 
