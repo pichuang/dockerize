@@ -1,10 +1,12 @@
-smokeping:
-  command: -T Asia/Taipei
-  volumes:
-      - ./root/etc/smokeping:/etc/smokeping:ro
-      - ./root/var/lib/smokeping:/var/lib/smokeping:rw
-      - ./root/var/cache/smokeping:/var/cache/smokeping:rw
-  restart: always
-  ports:
-      - "8000:80"
-  image: dperson/smokeping
+version: "3"
+services:
+  smokeping:
+    image: docker.io/dperson/smokeping
+    command: -T Asia/Taipei
+    volumes:
+        - ./root/etc/smokeping:/etc/smokeping:ro
+        - ./root/var/lib/smokeping:/var/lib/smokeping:rw
+        - ./root/var/cache/smokeping:/var/cache/smokeping:rw
+    restart: always
+    ports:
+        - "8000:80"

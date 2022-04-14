@@ -6,7 +6,8 @@
 3. Install git
 
 ## Rush Services
-- [ ] smokeping
+- [x] smokeping
+  - [x] library - `20220414`
 - [x] mariadb
   - [x] library - `20220413`
   - [x] bitnami - `20220414`
