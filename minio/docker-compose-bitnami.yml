@@ -1,0 +1,13 @@
+version: "3"
+services:
+  minio:
+    # Ref https://hub.docker.com/r/bitnami/minio
+    image: docker.io/bitnami/minio:2022.4.12
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    environment:
+      - MINIO_ROOT_USER=root
+      - MINIO_ROOT_PASSWORD=password
+    volumes:
+      - './root:/data'

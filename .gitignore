@@ -3,4 +3,5 @@ mysql/root/*
 redis/root/*
 mongodb/root/*
 kafka/root/*
+minio/root/*
 
