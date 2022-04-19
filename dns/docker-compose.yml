@@ -1,11 +1,13 @@
-econ-dns:
-  image: sameersbn/bind:latest
+bind-dns:
+  # https://hub.docker.com/r/sameersbn/bind
+  image: docker.io/sameersbn/bind:9.16.1-20200524
   dns: 127.0.0.1
-  environment:
-    - ROOT_PASSWORD=econ-dns
-  ports:
-   - 192.168.100.1:10000:10000
-   - 192.168.100.1:53:53/udp
-  volumes:
-    - /srv/docker/dns:/data
   restart: always
+  environment:
+    - ROOT_PASSWORD=pichuang
+  ports:
+   - 10000:10000/tcp
+   - 53:53/udp
+   - 53:53/tcp
+  volumes:
+    - "./root:/data"
