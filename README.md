@@ -25,7 +25,8 @@
   - [x] bitnami - `20220414`
 - [x] minio
   - [x] bitnami - `20220414`
-
+- [x] grafana + prometheus
+  - [x] bitnami - `20220420`
 
 ## Known Issues
 

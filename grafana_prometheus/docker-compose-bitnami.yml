@@ -30,4 +30,4 @@ services:
       HTTP_PORT: "8080"
       ENABLE_METRICS: 'true'
     ports:
-      - '8080:8080'
+      - 8080:8080
