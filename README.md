@@ -26,6 +26,15 @@
 - [x] minio
   - [x] bitnami - `20220414`
 
+
+## Known Issues
+
+- Permission Denied
+```bash
+sudo chown -R 1001:1001 ./root
+```
+
+
 ## Setup
 
 - Start dockerize DNS service

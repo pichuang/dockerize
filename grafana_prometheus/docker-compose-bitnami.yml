@@ -1,0 +1,11 @@
+version: "3"
+services:
+  prometheus:
+    # Ref: https://hub.docker.com/r/bitnami/prometheus
+    image: docker.io/bitnami/prometheus:2.34.0
+    restart: always
+    volumes:
+      - "./root/data:/opt/bitnami/prometheus/data"
+      #- "./root/conf:/opt/bitnami/prometheus/conf"
+    ports:
+      - 9090:9090

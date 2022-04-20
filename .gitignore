@@ -4,4 +4,6 @@ redis/root/*
 mongodb/root/*
 kafka/root/*
 minio/root/*
+grafana_prometheus/root/data/*
+
 
